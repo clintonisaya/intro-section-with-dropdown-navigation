@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    font-family: 'Epilogue', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+@media (min-width: 1440px) {
+    .navbar {
+        max-width: 1400px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 15px;
+        margin: 15px auto;
+    }
+    .navbar a {
+        text-decoration: none;
+        color: hsl(0, 0%, 41%);
+        padding: 10px;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        border-radius: 15px;
+        margin-top: 15px;
+        z-index: 1;
+    }
+    
+    .dropdown-content a {
+        display: flex;
+        margin: 15px;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    
+    .navbar .nav-right #register {
+        background-color: hsl(0, 0%, 98%);
+        border-radius: 15px;
+        color: hsl(0, 0%, 41%);
+        padding: 10px;
+        border: 2px solid hsl(0, 0%, 41%);
+    }
+    
+    .container {
+        max-width: 1200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 25px;
+        margin: 25px auto;
+    }
+    
+    .hero-content {
+        flex: 1;
+        padding-right: 20px;
+    }
+    
+    .hero-content h1 {
+        font-size: 60px;
+        color: hsl(0, 0%, 8%);
+        margin-top: 45px;
+    }
+    
+    .hero-content p {
+        font-size: 18px;
+        color: hsl(0, 0%, 41%);
+        max-width: 450px;
+        width: 100%;
+        margin-top: 70px;
+    }
+    
+    .hero-content button {
+        margin-top: 50px;
+        background-color: hsl(0, 0%, 8%);
+        width: 170px;
+        height: 55px;
+        border-radius: 15px;
+        color: hsl(0, 0%, 98%);
+        font-size: 18px;
+    }
+    
+    .hero-content button:hover {
+        margin-top: 50px;
+        background-color: hsl(0, 0%, 98%);
+        width: 170px;
+        height: 55px;
+        border-radius: 15px;
+        color: hsl(0, 0%, 8%);
+        font-size: 18px;
+    }
+    
+    .hero-img {
+        flex: 1;
+        display: flex;
+        max-width: 500px;
+    }
+    
+    .hero-img img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .clients {
+        max-width: 1200px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        padding: 25px;
+        margin: 25px auto;
+    }
+    
+    .clients img {
+        margin-left: 10px;
+    }
+}
+
+
+
