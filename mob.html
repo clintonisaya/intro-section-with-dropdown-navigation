@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snap</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: black;
+            margin: 0 15px;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 10px;
+            z-index: 1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .intro {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 50px 20px;
+        }
+        .intro-text {
+            max-width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .intro-text h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+        .intro-text p {
+            font-size: 18px;
+            color: #555;
+        }
+        .intro img {
+            max-width: 40%;
+            border-radius: 10px;
+            align-self: flex-end;
+        }
+        .client-logos {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 20px 0;
+        }
+        .client-logos img {
+            max-width: 100px;
+            margin: 0 20px;
+        }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 250px;
+            background-color: white;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+            padding: 20px;
+            z-index: 1000;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        .mobile-menu .close-btn {
+            display: block;
+            text-align: right;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .mobile-menu a {
+            display: block;
+            margin: 20px 0;
+            color: black;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .mobile-dropdown-content {
+            display: none;
+            padding-left: 20px;
+        }
+        .mobile-dropdown-content.active {
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .navbar a:not(:first-child), .dropdown {
+                display: none;
+            }
+            .hamburger {
+                display: block;
+            }
+            .intro {
+                flex-direction: column;
+                align-items: center;
+            }
+            .intro-text {
+                max-width: 100%;
+                text-align: center;
+            }
+            .intro img {
+                max-width: 80%;
+                margin-top: 20px;
+            }
+            .client-logos {
+                flex-direction: column;
+                align-items: center;
+            }
+            .client-logos img {
+                max-width: 80px;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="#">snap</a>
+        <div class="dropdown">
+            <a href="#">Features</a>
+            <div class="dropdown-content">
+                <a href="#">Todo List</a>
+                <a href="#">Calendar</a>
+                <a href="#">Reminders</a>
+                <a href="#">Planning</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Company</a>
+            <div class="dropdown-content">
+                <a href="#">History</a>
+                <a href="#">Our Team</a>
+                <a href="#">Blog</a>
+            </div>
+        </div>
+        <a href="#">Careers</a>
+        <a href="#">About</a>
+        <a href="#">Login</a>
+        <a href="#">Register</a>
+        <span class="hamburger" id="hamburger">&#9776;</span>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <span class="close-btn" id="closeBtn">&times;</span>
+        <div class="mobile-dropdown">
+            <a href="#">Features</a>
+            <div class="mobile-dropdown-content">
+                <a href="#">Todo List</a>
+                <a href="#">Calendar</a>
+                <a href="#">Reminders</a>
+                <a href="#">Planning</a>
+            </div>
+        </div>
+        <div class="mobile-dropdown">
+            <a href="#">Company</a>
+            <div class="mobile-dropdown-content">
+                <a href="#">History</a>
+                <a href="#">Our Team</a>
+                <a href="#">Blog</a>
+            </div>
+        </div>
+        <a href="#">Careers</a>
+        <a href="#">About</a>
+        <a href="#">Login</a>
+        <a href="#">Register</a>
+    </div>
+
+    <div class="intro">
+        <div class="intro-text">
+            <h1>Make remote work</h1>
+            <p>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
+            <button>Learn more</button>
+        </div>
+        <img src="path-to-your-image.jpg" alt="Remote Work">
+    </div>
+
+    <div class="client-logos">
+        <img src="path-to-logo1.png" alt="Client 1">
+        <img src="path-to-logo2.png" alt="Client 2">
+        <img src="path-to-logo3.png" alt="Client 3">
+        <img src="path-to-logo4.png" alt="Client 4">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const closeBtn = document.getElementById('closeBtn');
+            const mobileDropdowns = document.querySelectorAll('.mobile-dropdown > a');
+
+            hamburger.addEventListener('click', () => {
+                console.log('Hamburger clicked');
+                mobileMenu.classList.add('active');
+            });
+
+            closeBtn.addEventListener('click', () => {
+                console.log('Close button clicked');
+                mobileMenu.classList.remove('active');
+            });
+
+            mobileDropdowns.forEach(dropdown => {
+                dropdown.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    console.log(`${dropdown.innerText} clicked`);
+                    const content = dropdown.nextElementSibling;
+                    content.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

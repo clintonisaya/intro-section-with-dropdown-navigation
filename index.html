@@ -10,7 +10,8 @@
 <body>
     
     <div class="navbar">
-        <a id="logo" href="#"><img src="assets/logo.svg" alt="logo"></a>
+        <div class="nav-container">
+            <a id="logo" href="#"><img src="assets/logo.svg" alt="logo"></a>
             <div class="dropdown navlink">
                 <a href="#">Features</a>
                 <div class="dropdown-content">
@@ -30,28 +31,33 @@
             </div>
             <a class="navlink" href="#">Careers</a>
             <a class="navlink" href="#">About</a>
+        </div>
         <div class="nav-right">
+        <div class="button-right">
             <a href="#" id="login">Login</a>
             <a href="#" id="register">Register</a>
+            <span class="hamburger" id="hamburger">&#9776;</span>
         </div>
+        </div> 
     </div>
 
     <div class="container">
         <div class="hero-content">
-            <h1>Make <br> Remote Work</h1>
-            <p>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
-            <button class="Learn-more">Learn more</button>
+            <div class="hero-content-top">
+                <h1>Make <br> Remote Work</h1>
+                <p>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
+                <button class="Learn-more">Learn more</button>
+            </div>
+            <div class="bottom">
+                <img src="assets/client-databiz.svg" alt="databiz" id="img-1">
+                <img src="assets/client-audiophile.svg" alt="audiophile" id="img-2">
+                <img src="assets/client-meet.svg" alt="meet" id="img-3">
+                <img src="assets/client-maker.svg" alt="maker" id="img-4">
+            </div>
         </div>
         <div class="hero-img">
             <img src="assets/image-hero-desktop.png" alt="hero image">
         </div>
-        
-    </div>
-    <div class="clients">
-        <img src="assets/client-audiophile.svg" alt="audiophile" id="img-1">
-        <img src="assets/client-databiz.svg" alt="databiz" id="img-2">
-        <img src="assets/client-maker.svg" alt="maker" id="img-3">
-        <img src="assets/client-meet.svg" alt="meet" id="img-4">
     </div>
 </body>
 </html>

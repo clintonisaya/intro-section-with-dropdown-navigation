@@ -2,9 +2,6 @@
 
 *, *::before, *::after {
     box-sizing: border-box;
-}
-
-* {
     font-family: 'Epilogue', sans-serif;
 }
 
@@ -13,8 +10,6 @@ body {
     padding: 0;
 }
 
-
-@media (min-width: 1440px) {
     .navbar {
         max-width: 1400px;
         display: flex;
@@ -28,6 +23,10 @@ body {
         text-decoration: none;
         color: hsl(0, 0%, 41%);
         padding: 10px;
+    }
+
+    .nav-container {
+        display: flex;
     }
     
     .dropdown-content {
@@ -60,22 +59,34 @@ body {
     .container {
         max-width: 1200px;
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-around;
         width: 100%;
         padding: 25px;
-        margin: 25px auto;
+        margin: auto;
     }
-    
     .hero-content {
-        flex: 1;
-        padding-right: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    .hero-content-top {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    .hero-content-bottom {
+        display: flex;
+        
     }
     
     .hero-content h1 {
         font-size: 60px;
         color: hsl(0, 0%, 8%);
-        margin-top: 45px;
+        margin-bottom: 60px;
+        margin-top: 0px;
     }
     
     .hero-content p {
@@ -83,11 +94,11 @@ body {
         color: hsl(0, 0%, 41%);
         max-width: 450px;
         width: 100%;
-        margin-top: 70px;
+        margin-top: 0px;
+        margin-bottom: 60px;
     }
     
     .hero-content button {
-        margin-top: 50px;
         background-color: hsl(0, 0%, 8%);
         width: 170px;
         height: 55px;
@@ -97,7 +108,6 @@ body {
     }
     
     .hero-content button:hover {
-        margin-top: 50px;
         background-color: hsl(0, 0%, 98%);
         width: 170px;
         height: 55px;
@@ -107,7 +117,6 @@ body {
     }
     
     .hero-img {
-        flex: 1;
         display: flex;
         max-width: 500px;
     }
@@ -130,7 +139,9 @@ body {
     .clients img {
         margin-left: 10px;
     }
-}
 
+    .hamburger {
+        display: none;
+    }
 
 
